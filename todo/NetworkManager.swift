@@ -19,5 +19,8 @@ class NetworkManager {
     
     func fetchInfo() async throws -> [Todo] {
         
+        guard let url = URL(string: url) else {
+            throw NetworkErrors.invalidURL
+        }
     }
 }
