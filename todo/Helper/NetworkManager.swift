@@ -15,9 +15,11 @@ class NetworkManager: ObservableObject {
     ///variable for get info from JSON
     var url = "https://dummyjson.com/todos"
     
-    init() {}
+    init() {
+        
+    }
     
-    func fetchInfo() async throws -> [Todo] {
+    func getInfo() async throws -> Welcome {
         
         guard let url = URL(string: url) else {
             throw NetworkErrors.invalidURL
@@ -30,7 +32,7 @@ class NetworkManager: ObservableObject {
         }
         
         do {
-            return try JSONDecoder().decode([Todo].self, from: data)
+            return try JSONDecoder().decode(Welcome.self, from: data)
         } catch {
             throw NetworkErrors.invalidData
         }

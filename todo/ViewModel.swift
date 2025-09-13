@@ -9,6 +9,20 @@ import Foundation
 
 class ViewModel: ObservableObject {
     
+    ///array for info
+    @Published var todos: [Todo] = []
     
-    @Published var todo: [Todo]
+    func gets() {
+        Task {
+            do {
+                let todo = try await NetworkManager.shared.getInfo()
+                todos = todo.todos
+            }
+            catch {
+                if let error = error as? NetworkErrors {
+                    print(error)
+                }
+            }
+        }
+    }
 }
