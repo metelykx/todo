@@ -28,5 +28,11 @@ class NetworkManager: ObservableObject {
         guard let response = response as? HTTPURLResponse, response.statusCode == 200 else {
             throw NetworkErrors.invalidResponse
         }
+        
+        do {
+            return try JSONDecoder().decode([Todo].self, from: data)
+        } catch {
+            throw NetworkErrors.invalidData
+        }
     }
 }
