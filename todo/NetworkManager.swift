@@ -22,5 +22,7 @@ class NetworkManager: ObservableObject {
         guard let url = URL(string: url) else {
             throw NetworkErrors.invalidURL
         }
+        
+        let (data,response) = try await URLSession.shared.data(from: url)
     }
 }
