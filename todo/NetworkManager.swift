@@ -8,5 +8,5 @@
 import Foundation
 
 class NetworkManager {
-    
+    var url = "https://dummyjson.com/todos"
 }
