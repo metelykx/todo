@@ -1,0 +1,7 @@
+//
+//  NetworkErrors.swift
+//  todo
+//
+//  Created by Denis Ivaschenko on 13.09.2025.
+//
+
