@@ -8,5 +8,11 @@
 import Foundation
 
 class NetworkManager {
+    
+    ///variable for get info from JSON
     var url = "https://dummyjson.com/todos"
+    
+    func fetchInfo() async throws -> [Todo] {
+        
+    }
 }
