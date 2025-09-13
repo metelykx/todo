@@ -9,8 +9,13 @@ import Foundation
 
 class NetworkManager {
     
+    ///singelton
+    static let shared = NetworkManager()
+    
     ///variable for get info from JSON
     var url = "https://dummyjson.com/todos"
+    
+    init() {}
     
     func fetchInfo() async throws -> [Todo] {
         
